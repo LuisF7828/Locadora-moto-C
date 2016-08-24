@@ -1,7 +1,7 @@
 # Locadora de Motocicletas em C
 Projeto de uma locadora de motos em C. 
 
-#Funcionalidades.
+#Funcionalidades
 
   Cadastrar clientes
   Listar clientes cadastrados
