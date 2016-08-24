@@ -1,7 +1,8 @@
 # Locadora-Moto.C
 Projeto de uma locadora de motos em C. 
 
-Funcionalidades
+Funcionalidades.
+
   Cadastrar clientes
   Listar clientes cadastrados
   Cadastrar veiculos
