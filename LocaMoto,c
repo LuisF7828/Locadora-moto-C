@@ -192,8 +192,8 @@ int main (void)
 		  fflush(stdin);
 		  while ((tecla=getchar())!='\r')
 		  break;
-	  }/*fim do swith*/
-  }/*fim do while*/
+	  }
+  }
   getch();
   return(0);
 }
