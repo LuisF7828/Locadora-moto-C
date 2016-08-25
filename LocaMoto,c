@@ -48,9 +48,10 @@ int cad_cliente (void)
 		gets(Cliente[j].nome);
 		printf("Digite o CPF do Cliente: ");
 		scanf("%d", &Cliente[j].cpf);
-				fflush(stdin);
+		fflush(stdin);
 		printf("Digite o nome da Rua: ");
-				gets(Cliente[j].rua);
+		gets(Cliente[j].rua);
+		
 		fflush(stdin);
 		printf("Digite o numero da casa: ");
 		scanf("%d", &Cliente[j].numero);
@@ -113,7 +114,7 @@ int loc_moto (void)
 	if(consulta == Cliente[k].nome);
 	{
 	  printf("Cliente cadastrado, deseja locar veiculo s/n: ");
-	  scanf("%c", &resposta);
+	  scanf("%s", &resposta);
 	  if(resposta == 's')
 		{
 		  printf("Digite o codigo da Motocicleta: ");
