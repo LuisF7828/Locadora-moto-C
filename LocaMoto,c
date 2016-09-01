@@ -80,7 +80,7 @@ int list_cliente (void)
 
 int cad_moto (void)
 {
-  printf("Cadastro de motocicleta %d de 1 milhao\n", i);
+  printf("Cadastro de Motocicleta %d de 1 milhao\n", i);
   if(i<1000000)
 	{
 	 printf("Digite o codigo do veiculo: ");
