@@ -73,7 +73,7 @@ int list_cliente (void)
 	   {
 	k++;
 	printf("\nNome do Cliente: %s\n", Cliente[k].nome);
-	getch();
+
 	   }
   return (0);
 }
@@ -194,6 +194,6 @@ int main (void)
 		  break;
 	  }
   }
-  getch();
+ 
   return(0);
 }
