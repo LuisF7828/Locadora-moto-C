@@ -3,9 +3,7 @@
 
 int i=0, j=0;
 char tecla;
-
-struct cadastro_cliente
-  {
+struct cadastro_cliente{
 	  int cod;
 	  char nome [40];
 	  char rua [30];
@@ -15,9 +13,7 @@ struct cadastro_cliente
 	  char cidade [30];
 	  int codigocar;
   };
-
 struct cadastro_cliente Cliente[1000000];
-
 struct cadastro_moto
   {
 	  int codcar;
@@ -26,21 +22,16 @@ struct cadastro_moto
 	  char placa [15];
 	  int status;
   };
-
 struct cadastro_moto moto[1000000];
-
 int cad_cliente(void);
 int list_cliente(void);
 int cad_moto(void);
 int loc_moto(void);
 int mostra_clientes(void);
 int devo_moto(void);
-
-int cad_cliente (void)
-{
+int cad_cliente (void){
    printf("Cadastro %d de 1 milhao\n", j);
-   if (j<1000000)
-	  {
+   if (j<1000000){
 		printf("Digite o codigo do Cliente: ");
 		scanf("%d", &Cliente[j].cod);
 				fflush(stdin);
@@ -51,7 +42,6 @@ int cad_cliente (void)
 		fflush(stdin);
 		printf("Digite o nome da Rua: ");
 		gets(Cliente[j].rua);
-		
 		fflush(stdin);
 		printf("Digite o numero da casa: ");
 		scanf("%d", &Cliente[j].numero);
@@ -65,9 +55,7 @@ int cad_cliente (void)
 	  }
    return(0);
 }
-
-int list_cliente (void)
-{
+int list_cliente (void){
   int k=0;
   if(Cliente[k].cod != 0)
 	   {
@@ -77,12 +65,9 @@ int list_cliente (void)
 	   }
   return (0);
 }
-
-int cad_moto (void)
-{
+int cad_moto (void){
   printf("Cadastro de Motocicleta %d de 1 milhao\n", i);
-  if(i<1000000)
-	{
+  if(i<1000000){
 	 printf("Digite o codigo do veiculo: ");
 	 scanf("%d", &moto[i].codcar);
 	 fflush(stdin);
@@ -98,7 +83,6 @@ int cad_moto (void)
 	}
   return(0);
 }
-
 int loc_moto (void)
 {
   int k=0;
@@ -109,10 +93,8 @@ int loc_moto (void)
   printf("Digite o nome do cliente que quer locar um veiculo: ");
   gets(consulta);
   Reconsulta:
-  for(k=0; k<50; k++)
-  {
-	if(consulta == Cliente[k].nome);
-	{
+  for(k=0; k<50; k++){
+	if(consulta == Cliente[k].nome);{
 	  printf("Cliente cadastrado, deseja locar veiculo s/n: ");
 	  scanf("%s", &resposta);
 	  if(resposta == 's')
@@ -127,7 +109,6 @@ int loc_moto (void)
    printf("Cliente nao Cadastrado");
    return(0);
 }
-
 int mostra_clientes (void)
 {
 	for (j=0; j<50; j++)
@@ -140,7 +121,6 @@ int mostra_clientes (void)
 	}
   return(0);
 }
-
 int devo_moto (void)
 {
   char dev, devolucao[40];
