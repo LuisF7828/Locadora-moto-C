@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -101,11 +102,17 @@ int loc_moto (void)
 		{
 		  printf("Digite o codigo da Motocicleta: ");
 		  scanf("%d", &codi);
-		  Cliente[k].codigocar=codi;
-		  moto[k].status= 1;
-		};
-	 };
-   };
+		  if(Cliente[k].codigocar==codi){
+            printf("Locacao cadastrada com sucesso:");
+            moto[k].status= 1;
+		  }else if(Cliente[k].codigocar!=codi){
+		  printf("Motocicleta nao encontrada no banco:");
+
+		  }
+
+		}
+	 }
+   }
    printf("Cliente nao Cadastrado");
    return(0);
 }
@@ -126,7 +133,7 @@ int devo_moto (void)
   char dev, devolucao[40];
   printf("Digite o Nome do Cliente que vai devolver veiculo: ");
   scanf("%c", &devolucao);
-  for (i=0; i<50; i++)
+  for (i=0; i<1000000; i++)
    {
 	if(devolucao == Cliente[i].nome)
 	  {
@@ -155,8 +162,8 @@ int main (void)
 	printf("4 - LOCAR MOTOCICLETA\n");
 	printf("5 - CLIENTES COM MOTOCLICLETAS LOCADAS\n");
 	printf("6 - DEVOLUCAO DE MOTOCICLETA\n");
-	printf("7 - SAIR\n");
-	printf("Escolha uma op‡Æo:");
+	printf("7 - SAIR\n\n");
+	printf("Escolha uma opcao:");
 	fflush(stdin);
 	scanf("%d", &opcao);
 	switch(opcao)
