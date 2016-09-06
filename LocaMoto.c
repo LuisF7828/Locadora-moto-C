@@ -93,9 +93,8 @@ int loc_moto (void)
   fflush(stdin);
   printf("Digite o nome do cliente que quer locar um veiculo: ");
   gets(consulta);
-  Reconsulta:
-  for(k=0; k<50; k++){
-	if(consulta == Cliente[k].nome);{
+  for(k=0; k<100000; k++){
+	if(consulta == Cliente[k].nome){
 	  printf("Cliente cadastrado, deseja locar veiculo s/n: ");
 	  scanf("%s", &resposta);
 	  if(resposta == 's')
@@ -105,16 +104,18 @@ int loc_moto (void)
 		  if(Cliente[k].codigocar==codi){
             printf("Locacao cadastrada com sucesso:");
             moto[k].status= 1;
-		  }else if(Cliente[k].codigocar!=codi){
-		  printf("Motocicleta nao encontrada no banco:");
-
+            return 0;
 		  }
-
+		  else
+            if(Cliente[k].codigocar!=codi){
+		  printf("Motocicleta nao encontrada no banco:");
+            return 0;
+		  }
 		}
 	 }
    }
    printf("Cliente nao Cadastrado");
-   return(0);
+   return 0;
 }
 int mostra_clientes (void)
 {
@@ -124,6 +125,7 @@ int mostra_clientes (void)
 		{
 		   printf("Cliente: %s", Cliente[i].nome);
 		   printf("Marca do veiculo: %s", moto[i].marca);
+		   i++;
 		}
 	}
   return(0);
