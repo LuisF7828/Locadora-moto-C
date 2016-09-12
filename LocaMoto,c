@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 int i=0, j=0;
 char tecla;
@@ -12,7 +13,7 @@ struct cadastro_cliente{
 	  int cpf;
 	  char bairro [30];
 	  char cidade [30];
-	  int codigocar;
+	  int codigomot;
   };
 struct cadastro_cliente Cliente[1000000];
 struct cadastro_moto
@@ -102,25 +103,23 @@ int loc_moto (void)
 		{
 		  printf("Digite o codigo da Motocicleta: ");
 		  scanf("%d", &codi);
-		  if(Cliente[k].codigocar==codi){
+		  if(Cliente[k].codigomot==codi){
             printf("Locacao cadastrada com sucesso:");
             moto[k].status= 1;
-		  }else if(Cliente[k].codigocar!=codi){
+		  }else if(Cliente[k].codigomot!=codi){
 		  printf("Motocicleta nao encontrada no banco:");
 
 		  }
-
 		}
 	 }
    }
-   printf("Cliente nao Cadastrado");
    return(0);
 }
 int mostra_clientes (void)
 {
 	for (j=0; j<50; j++)
 	{
-	   if(Cliente[j].codigocar != 0)
+	   if(Cliente[j].codigomot != 0)
 		{
 		   printf("Cliente: %s", Cliente[i].nome);
 		   printf("Marca do veiculo: %s", moto[i].marca);
@@ -141,7 +140,7 @@ int devo_moto (void)
 		scanf("%c", &dev);
 		if (dev == 's')
 		  {
-			Cliente[i].codigocar=0 ;
+			Cliente[i].codigomot=0 ;
 			moto[i].status=0;
 		  }
 	  }
@@ -154,6 +153,7 @@ int main (void)
   int opcao=0;
   while(opcao<8)
   {
+    system("cls");
 	printf("\n\nLOCADORA DE MOTOCICLETAS\n");
 	printf("..................\n\n");
 	printf("1 - CADASTRAR CLIENTE\n");
@@ -175,9 +175,8 @@ int main (void)
 		  case 5: mostra_clientes(); break;
 		  case 6: devo_moto(); break;
 		  case 7: exit(0); break;
-		  default: printf("\nop‡Æo invalida - tecle <enter>");
+		  default: printf("\opcao invalida - tecle <enter>");
 		  fflush(stdin);
-		  while ((tecla=getchar())!='\r')
 		  break;
 	  }
   }
